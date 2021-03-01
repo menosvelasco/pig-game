@@ -1,6 +1,9 @@
 'use strict';
 
 // Selecting elements
+const player0Ele = document.querySelector('.player-0-panel');
+const player1Ele = document.querySelector('.player-1-panel');
+
 const score_0_Ele = document.getElementById('score-0');
 const score_1_Ele = document.getElementById('score-1');
 
@@ -13,6 +16,9 @@ const rollDice = document.querySelector('.btn-roll-dice');
 const holdPoints = document.querySelector('.btn-hold-points');
 
 let currentScore = 0;
+let activePlayer = 0;
+
+const scoreArray = [0, 0];
 
 score_0_Ele.textContent = 0;
 score_1_Ele.textContent = 0;
@@ -31,8 +37,15 @@ rollDice.addEventListener('click', function () {
   if (randomDice !== 1) {
     // add dice to current score
     currentScore += randomDice;
-    current_0_Ele.textContent = currentScore; // change later
+    document.getElementById(
+      `current-${activePlayer}`
+    ).textContent = currentScore;
   } else {
     //  switch to next player
+    document.getElementById(`current-${activePlayer}`).textContent = 0;
+    activePlayer = activePlayer === 0 ? 1 : 0;
+    currentScore = 0;
+    player0Ele.classList.toggle('active');
+    player1Ele.classList.toggle('active');
   }
 });
