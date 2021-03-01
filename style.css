@@ -68,7 +68,7 @@ body {
 }
 
 .active {
-  background-color: #f7f7f7;
+  background-color: silver;
 }
 .active .player-name {
   font-weight: 300;
@@ -141,13 +141,14 @@ i {
   transition: margin 0.3s;
 }
 
-.btn-new {
-  top: 45px;
+.btn-new-game {
+  bottom: 65px;
+  position: relative;
 }
-.btn-roll {
+.btn-roll-dice {
   top: 403px;
 }
-.btn-hold {
+.btn-hold-points {
   top: 467px;
 }
 
@@ -166,4 +167,8 @@ i {
 .winner .player-name {
   font-weight: 300;
   color: #eb4d4d;
+}
+
+.hidden {
+  display: none;
 }
