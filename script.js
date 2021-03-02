@@ -23,8 +23,8 @@ const init = function () {
   activePlayer = 0;
   playing = true;
 
-  score_0_Ele.content = 0;
-  score_1_Ele.content = 0;
+  score_0_Ele.textContent = 0;
+  score_1_Ele.textContent = 0;
 
   current_0_Ele.textContent = 0;
   current_1_Ele.textContent = 0;
