@@ -15,16 +15,27 @@ const newGame = document.querySelector('.btn-new-game');
 const rollDice = document.querySelector('.btn-roll-dice');
 const holdPoints = document.querySelector('.btn-hold-points');
 
-let currentScore = 0;
-let activePlayer = 0;
+let scoreArray, currentScore, activePlayer, playing;
 
-const scoreArray = [0, 0];
+const init = function () {
+  scoreArray = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
 
-score_0_Ele.textContent = 0;
-score_1_Ele.textContent = 0;
-diceEle.classList.add('hidden');
+  score_0_Ele.content = 0;
+  score_1_Ele.content = 0;
 
-let playing = true;
+  current_0_Ele.textContent = 0;
+  current_1_Ele.textContent = 0;
+
+  diceEle.classList.add('hidden');
+  player0Ele.classList.remove('winner');
+  player1Ele.classList.remove('winner');
+
+  player0Ele.classList.add('active');
+  player1Ele.classList.remove('active');
+};
 
 const switchPlayer = function () {
   document.getElementById(`current-${activePlayer}`).textContent = 0;
@@ -41,7 +52,7 @@ rollDice.addEventListener('click', function () {
     const randomDice = Math.trunc(Math.random() * 6) + 1;
     // 2. display dice roll
     diceEle.classList.remove('hidden');
-    diceEle.src = `${randomDice}-dice.png`;
+    diceEle.src = `dice-${randomDice}.png`;
 
     // 3. check for rolled 1
     if (randomDice !== 1) {
@@ -82,3 +93,5 @@ holdPoints.addEventListener('click', function () {
   }
   // 3. switch to the next player
 });
+
+newGame.addEventListener('click', init);

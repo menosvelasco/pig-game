@@ -162,13 +162,12 @@ i {
 }
 
 .winner {
-  background-color: #9ffa9bc8;
+  background-color: rgba(134, 248, 138, 0.452);
 }
 .winner .player-name {
   font-weight: 300;
   color: #eb4d4d;
 }
-
 .hidden {
   display: none;
 }
