@@ -1,5 +1,3 @@
-play pig game.
-
 How to play!
 
 # whichever player reach 10 points first wins the games.
